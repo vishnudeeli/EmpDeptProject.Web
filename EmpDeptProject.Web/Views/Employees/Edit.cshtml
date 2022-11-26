@@ -1,0 +1,38 @@
+﻿@model EmpDeptProject.Models.Models.Employee
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Edit Employee</h2>
+            <hr/>
+        </div>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="mb-3">
+            <label asp-for="EmployeeName"></label>
+            <input asp-for="EmployeeName"  class="form-control" />
+            <span asp-validation-for="EmployeeName" class="text-danger"></span>
+            @* @Html.ValidationMessageFor(m=>m.Name,"Name cannot be more than 20 characters")*@
+
+        </div>
+         <div class="mb-3">
+            <label asp-for="EmployeeSalary"></label> 
+            <input asp-for="EmployeeSalary"  class="form-control"  />
+         </div>
+         <div class="mb-3">
+            <label asp-for="DepartmentId"></label> 
+            <input asp-for="DepartmentId" class="form-control"  />
+            <div class="mb-3">
+            <label asp-for="Departments.DepartmentName"></label> 
+            <input asp-for="Departments.DepartmentName"  class="form-control"  />
+         </div>
+         </div>
+         <button type="submit" class="btn btn-primary" style="width:130px">SaveChanges</button>
+         <a asp-controller="Employees" asp-action="Create" class="btn btn-primary">Back</a>
+
+    </div>
+</form>
